@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        /* CSS 变量定义颜色 */
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-main: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+        }
+
+        /* 基础重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        /* 头部样式 */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 40px;
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid var(--accent-color);
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* 社交链接 */
+        .social-links {
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: 600;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        /* 内容区块 */
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--accent-color);
+            padding-left: 10px;
+        }
+
+        /* 项目卡片网格 */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 20px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            border-color: var(--accent-color);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .tag {
+            display: inline-block;
+            background-color: rgba(88, 166, 255, 0.15);
+            color: var(--accent-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+        }
+
+        /* 底部 */
+        footer {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.8rem;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <img src="https://github.com/github.png" alt="Avatar" class="avatar">
+            <h1>你的名字</h1>
+            <p class="subtitle">前端开发工程师 / 开源爱好者 / 摄影师</p>
+            
+            <div class="social-links">
+                <a href="#">GitHub</a>
+                <a href="#">Twitter</a>
+                <a href="#">Blog</a>
+                <a href="mailto:hi@example.com">Email Me</a>
+            </div>
+        </header>
+
+        <section>
+            <h2>关于我 (About)</h2>
+            <p>
+                你好！我是一名充满激情的开发者，专注于构建现代化的 Web 应用。
+                我喜欢简洁的代码、优雅的设计以及探索新技术。
+            </p>
+        </section>
+
+        <section>
+            <h2>精选项目 (Projects)</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>🚀 个人博客系统</h3>
+                    <p>基于 Next.js 和 Notion API 构建的静态博客，支持即时渲染。</p>
+                    <span class="tag">React</span>
+                    <span class="tag">Next.js</span>
+                </div>
+
+                <div class="card">
+                    <h3>🤖 微信自动回复机器人</h3>
+                    <p>使用 Python 编写的自动化脚本，提高社群管理效率。</p>
+                    <span class="tag">Python</span>
+                    <span class="tag">Automation</span>
+                </div>
+
+                <div class="card">
+                    <h3>🎨 CSS 动画库</h3>
+                    <p>轻量级的纯 CSS 动画合集，开箱即用。</p>
+                    <span class="tag">CSS3</span>
+                    <span class="tag">Design</span>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2024 Your Name. Hosted on GitHub Pages.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
